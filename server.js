@@ -115,7 +115,7 @@ app.post("/signup",(req ,res) => {
    console.log("signup" + req.body.password);
 
    let hashing =  async () => {
-    
+
       try{
        let newUser = new User({
          name,
@@ -257,7 +257,7 @@ app.delete("/removeall",(req,res)=>{
   removeAll();
 })
 
-app.listen(5000,()=>{
+app.listen(5000,"0.0.0.0",()=>{
     console.log(`[server] Server started @${port}`)
 })
 
