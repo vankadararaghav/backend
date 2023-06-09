@@ -38,7 +38,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 
-
+app.get("/",(req,res)=>{
+   res.send("Hii I am working");
+})
 app.get("/getalltasks",(req,res)=>{
   console.log(req.session.email);
 
@@ -257,7 +259,7 @@ app.delete("/removeall",(req,res)=>{
   removeAll();
 })
 
-app.listen(5000,"0.0.0.0",()=>{
+app.listen(port,"0.0.0.0",()=>{
     console.log(`[server] Server started @${port}`)
 })
 
