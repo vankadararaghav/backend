@@ -7,6 +7,7 @@ import User from "./models/user.js";
 import cookieParser from "cookie-parser";
 import sessions from  'express-session';
 import Task from "./models/Task.js"
+import cors from 'cors';
 
 
 dotenv.config();
@@ -24,6 +25,7 @@ const app = express();
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
 
+app.use(cors());
 //session middleware
 app.use(sessions({
     secret: "thisismysecrctekey",
